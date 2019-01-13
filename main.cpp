@@ -1,6 +1,6 @@
 #include <iostream>
 
-#define VERSION "2.0"
+#include "version_info.h"
 
 int main(const int argc, const char* argv[]) {
 
