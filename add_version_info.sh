@@ -10,9 +10,12 @@ VERSION_FILE=version_info.h
 REVISION_TAG="@AUTOGEN_REVISION"
 VERSION_TAG="@AUTOGEN_VERSION"
 
+# Match tags of type v3.4 etc.
+VERSION_MATCH_PATTERN="v[0-9]*\.[0-9]"
+
 # Execute commands
 REVISION=\"$(git rev-parse --short HEAD)\"
-VERSION=\"$(git describe --tags --match=v* --abbrev=0)\" || VERSION='"NO VERSION INFORMATION"'
+VERSION=\"$(git describe --tags --match=${VERSION_MATCH_PATTERN} --abbrev=0)\" || VERSION='"NO VERSION INFORMATION"'
 
 # Remove file if exist
 [ -f ${VERSION_FILE} ] && rm ${VERSION_FILE}
