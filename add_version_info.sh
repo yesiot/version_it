@@ -15,7 +15,7 @@ VERSION_MATCH_PATTERN="v[0-9]*\.[0-9]"
 
 # Execute commands
 REVISION=\"$(git rev-parse --short HEAD)\"
-VERSION=\"$(git describe --tags --match=${VERSION_MATCH_PATTERN} --abbrev=0)\" || VERSION='"NO VERSION INFORMATION"'
+VERSION=\"$(git describe --match=${VERSION_MATCH_PATTERN} --abbrev=0)\" || VERSION='"NO VERSION INFORMATION"'
 
 # Remove file if exist
 [ -f ${VERSION_FILE} ] && rm ${VERSION_FILE}
