@@ -4,7 +4,9 @@ set -e
 
 # File names
 TEMPLATE_FILE=version_info.template
-VERSION_FILE=version_info.h
+VERSION_FILE=${1}/version_info.h
+
+echo ${VERSION_FILE}
 
 # Tags
 REVISION_TAG="@AUTOGEN_REVISION"
