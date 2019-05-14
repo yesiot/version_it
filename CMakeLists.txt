@@ -11,7 +11,7 @@ add_custom_command (
     COMMAND ./add_version_info.sh ${GENERATED_FILES_DIR} WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
 )
 
-add_custom_target(version_info DEPENDS ${GENERATED_FILES_DIR}/version_info.h)
+add_custom_target(version_info DEPENDS ${GENERATED_FILES_DIR}/version_info.h ${CMAKE_CURRENT_SOURCE_DIR}/.git)
 set_source_files_properties(${GENERATED_FILES_DIR}/version_info.h GENERATED)
 
 include_directories(${CMAKE_CURRENT_BINARY_DIR}/generated)
