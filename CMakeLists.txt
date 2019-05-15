@@ -9,7 +9,7 @@ include_directories(${GENERATED_FILES_DIR})
 
 add_custom_command(OUTPUT ${GENERATED_FILES_DIR}/version_info.h
                    COMMAND ./add_version_info.sh ${GENERATED_FILES_DIR} WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
-                   DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/.git/logs/HEAD ${CMAKE_CURRENT_SOURCE_DIR}/.git/refs/tags/*)
+                   DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/.git/logs/HEAD ${CMAKE_CURRENT_SOURCE_DIR}/.git/refs/tags/* version_info.template add_version_info.sh)
 
 add_custom_target(version_info
                   DEPENDS ${GENERATED_FILES_DIR}/version_info.h)
